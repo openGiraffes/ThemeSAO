@@ -1,0 +1,19 @@
+{
+    "name": "SAO",
+    "description": "通知弹框/对话框/全局圆角。首次使用需重启手机",
+    "type": "certified",
+    "role": "theme",
+    "launch_path": "/index.html",
+    "version": "0.1.3",
+    "icons": {
+        "128": "/icons/icon128x128.png"
+    },
+    "origin": "app://theme-sao.kaios.lcsunm.cc",
+    "developer": {
+        "name": "Lcsunm",
+        "url": "http://lcsunm.cc"
+    },
+    "chrome": {
+        "statusbar": "overlap"
+    }
+}

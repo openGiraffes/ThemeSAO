@@ -1,0 +1,985 @@
+* {
+    font-family: "Open Sans";
+}
+
+input {
+    font-variant-numeric: nominal;
+}
+
+/*
+Gaia theme variables
+*/
+
+:root {
+    /** Grey Colors
+   ---------------------------------------------------------*/
+
+    --color-alpha: #333333;
+    --color-beta: #ffffff;
+    --color-gamma: #4d4d4d;
+    --color-delta: #5f5f5f;
+    --color-epsilon: #858585;
+    --color-zeta: #a6a6a6;
+    --color-eta: #c7c7c7;
+    --color-theta: #e7e7e7;
+    --color-iota: #f4f4f4;
+    --color-white: #ffffff;
+
+    /** Brand Colors
+ ---------------------------------------------------------*/
+
+    --color-darkblue: #00539f;
+    --color-blue: #00caf2;
+    --color-turquoise: #27c8c2;
+    --color-darkorange: #e66000;
+    --color-orange: #ff9500;
+    --color-yellow: #ffcb00;
+    --color-violet: #c40c84;
+    --color-carrotorange: #eb9423;
+    --color-wathetblue: #005da5;
+
+    /* gold */
+    --color-gold: #ffa000;
+    --color-gold-pressed: #cc8000;
+
+    --color-warning: #fbbd3c;
+    --color-destructive: #e2443a;
+    --color-preffered: #00ba91;
+
+    /* KaiOS Colors */
+
+    --color-gs100: #000000;
+    --color-gs90: #323232;
+    --color-gs70: #6a6a6a;
+    --color-gs45: #8c8c8c;
+    --color-gs20: #cccccc;
+    --color-gs10: #e6e6e6;
+    --color-gs00: #ffffff;
+
+    --color-purple: #873eff;
+    --color-pink: #f6529b;
+    --color-lime: #82c51b;
+    --color-cyan: #1cc1c4;
+    --color-blue: #0da1e1;
+    --color-orange: #ff8329;
+    --color-red: #f3203d;
+
+    --color-purple-pressed: #6c32cc;
+    --color-pink-pressed: #bf2392;
+    --color-lime-pressed: #6b9a23;
+    --color-cyan-pressed: #31979e;
+    --color-blue-pressed: #0a80b4;
+    --color-orange-pressed: #cc5310;
+    --color-red-pressed: #c21930;
+
+    /** Background
+   ---------------------------------------------------------*/
+
+    --background: var(--color-beta);
+    --background-plus: var(--color-theta);
+    --background-minus: var(--color-zeta);
+
+    /** Text Color
+   ---------------------------------------------------------*/
+
+    --text-color: var(--color-gamma);
+    --text-color-minus: var(--color-eta);
+
+    /** Button
+   ---------------------------------------------------------*/
+
+    --button-background: var(--color-iota);
+
+    /** Links
+   ---------------------------------------------------------*/
+
+    --link-color: var(--highlight-color);
+
+    /** Inputs
+   ---------------------------------------------------------*/
+
+    --input-background: var(--color-beta);
+    --input-color: var(--color-alpha);
+    --input-clear-background: #909ca7;
+
+    /** Buttons
+   ---------------------------------------------------------*/
+
+    --button-box-shadow: inset 0 -1px 0 #d8d8d8, inset 0 1px 0 #eeeeee;
+    --button-box-shadow-active: var(--button-box-shadow);
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-purple-background: #320374;
+    --header-pink-background: #48132c;
+    --header-lime-background: #2a400c;
+    --header-cyan-background: #045463;
+    --header-blue-background: #20407b;
+    --header-orange-background: #381e0d;
+    --header-red-background: #5b0700;
+
+    --header-disabled-button-color: rgba(255, 255, 255, 0.3);
+
+    /** Statusbar, Softkeybar and ClientHeight
+   *  Should update to proper value according to device size
+   ---------------------------------------------------------*/
+    --statusbar-height: 2.6rem;
+    --softkeybar-height: 3rem;
+    --header-height: 2.8rem;
+    --header-large-text-height: 2.4rem;
+    --tabbar-height: 2.7rem;
+    --rocketbar-urlbar-height: 3.6rem;
+
+    --statusbar-softkeybar-height: 5.6rem;
+    --header-tabbar-height: 5.5rem;
+
+    --client-height: calc(100% - var(--statusbar-softkeybar-height));
+
+    --clip-round-size: 1rem;
+    --clip-round-z-index: 7777777;
+    --clip-round-background: radial-gradient(farthest-side at 0% 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 1) 52%);
+
+    /* --sao-border-color: rgba(0, 0, 0, 0.05); */
+    --sao-border-color: white;
+    --sao-background-color: #f7f7f7;
+    --sao-header-color: #797778;
+    --sao-header-bacground-color: #fbfbfb;
+    --sao-header-border-color: #ffffff;
+    --sao-header-shadow-color: #c7c7c7;
+    --sao-header-shadow: 0 0 0.7rem var(--sao-header-shadow-color);
+    --sao-content-background-color: #ebe7e6;
+    --sao-content-color: #797778;
+    --sao-shadow-color: rgba(0, 0, 0, 0.1);
+    --sao-shadow: 0 0 0.5rem var(--sao-shadow-color);
+    --sao-highlight-color: #f9d713;
+}
+
+.theme-system,
+.theme-launcher {
+    /** Brand Color
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-purple);
+    --highlight-color-pressed: var(--color-purple-pressed);
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-background: var(--header-purple-background);
+
+    --header-color: var(--color-beta);
+}
+
+.theme-browser,
+.theme-service {
+    /** Brand Color
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-cyan);
+    --highlight-color-pressed: var(--color-cyan-pressed);
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-background: var(--header-cyan-background);
+
+    --header-color: var(--color-beta);
+}
+
+.theme-productivity {
+    /** Brand Color
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-orange);
+    --highlight-color-pressed: var(--color-orange-pressed);
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-background: var(--header-orange-background);
+
+    --header-color: var(--color-beta);
+}
+
+.theme-communications {
+    /** Brand Color
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-lime);
+    --highlight-color-pressed: var(--color-lime-pressed);
+
+    /** Links
+   ---------------------------------------------------------*/
+
+    --link-color: #177874;
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-background: var(--header-lime-background);
+    --header-color: var(--color-beta);
+    --header-icon-color: var(--color-beta);
+    --header-button-color: var(--link-color);
+}
+
+.theme-settings {
+    /** Background
+   ---------------------------------------------------------*/
+
+    --background: var(--color-iota);
+    --background-plus: var(--color-beta);
+    --background-minus: var(--color-epsilon);
+    --background-minus-minus: var(--color-zeta);
+
+    /** Highlight
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-blue);
+    --highlight-color-pressed: var(--color-blue-pressed);
+
+    /** Borders
+   ---------------------------------------------------------*/
+
+    --border-color: var(--color-theta);
+
+    /** Titles
+   ---------------------------------------------------------*/
+
+    --title-color: var(--background-minus);
+
+    /** Buttons
+   ---------------------------------------------------------*/
+
+    --button-background: var(--background-plus);
+
+    /** Switch
+   ---------------------------------------------------------*/
+
+    --switch-background: var(--background-minus-minus);
+
+    /** Checkbox
+   ---------------------------------------------------------*/
+
+    --checkbox-border-color: var(--background-minus-minus);
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-color: var(--title-color);
+    --header-background: var(--header-blue-background);
+    --header-button-color: var(--highlight-color);
+    --header-disabled-button-color: var(--color-theta);
+    --header-action-button-color: var(--title-color);
+}
+
+.theme-media {
+    /** Highlight Color
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-pink);
+    --highlight-color-pressed: var(--color-pink-pressed);
+
+    /** Background
+   ---------------------------------------------------------*/
+
+    --background: var(--color-alpha);
+    --background-plus: var(--color-gamma);
+    --background-minus: #2b2b2b;
+    --background-minus-minus: #1a1a1a;
+
+    /** Text Color
+   ---------------------------------------------------------*/
+
+    --text-color: var(--color-beta);
+
+    /** Button
+   ---------------------------------------------------------*/
+
+    --button-background: var(--background-plus);
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-background: var(--header-pink-background);
+    --header-icon-color: var(--text-color);
+    --header-button-color: var(--highlight-color);
+
+    --action-header-background: var(--header-background);
+
+    /** Borders
+   ---------------------------------------------------------*/
+
+    --border-color: var(--color-gamma);
+
+    /** Inputs
+   ---------------------------------------------------------*/
+
+    --input-background: var(--background-plus);
+
+    /** Text Input
+   ---------------------------------------------------------*/
+
+    --text-input-background: var(--background-minus);
+
+    /** Switch
+   ---------------------------------------------------------*/
+
+    --switch-head-border-color: var(--background-minus-minus);
+    --switch-background: var(--background-minus-minus);
+
+    /** Checkbox
+   ---------------------------------------------------------*/
+
+    --checkbox-border-color: var(--background-minus-minus);
+
+    /** Buttons
+   ---------------------------------------------------------*/
+
+    --button-box-shadow: none;
+    --button-box-shadow-active: none;
+}
+
+.tcl-theme-communications,
+.tcl-theme-settings {
+    /** Background
+   ---------------------------------------------------------*/
+
+    --background: var(--color-pink);
+    --background-title: var(--color-white);
+    --background-plus: var(--color-beta);
+    --background-minus: var(--color-epsilon);
+    --background-minus-minus: var(--color-zeta);
+
+    /** Highlight
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-lime);
+
+    /** Borders
+   ---------------------------------------------------------*/
+
+    --border-color: var(--color-theta);
+
+    /** Titles
+   ---------------------------------------------------------*/
+
+    --title-color: var(--background-title);
+
+    /** Buttons
+   ---------------------------------------------------------*/
+
+    --button-background: var(--background-plus);
+
+    /** Switch
+   ---------------------------------------------------------*/
+
+    --switch-background: var(--background-minus-minus);
+
+    /** Checkbox
+   ---------------------------------------------------------*/
+
+    --checkbox-border-color: var(--background-minus-minus);
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-color: var(--title-color);
+    --header-background: var(--background);
+    --header-button-color: var(--highlight-color);
+    --header-disabled-button-color: var(--color-theta);
+    --header-action-button-color: var(--title-color);
+
+    --action-header-background: var(--header-background);
+}
+
+.tcl-theme-messaging {
+    /** Brand Color
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-lime);
+
+    /** Links
+   ---------------------------------------------------------*/
+
+    --link-color: #177874;
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-background: var(--color-red);
+    --header-color: var(--color-beta);
+    --header-icon-color: var(--color-beta);
+    --header-button-color: var(--link-color);
+}
+
+.tcl-theme-video {
+    /** Highlight Color
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-lime);
+
+    /** Background
+   ---------------------------------------------------------*/
+
+    --background: var(--color-wathetblue);
+    --background-plus: var(--color-gamma);
+    --background-minus: #2b2b2b;
+    --background-minus-minus: #1a1a1a;
+
+    /** Text Color
+   ---------------------------------------------------------*/
+
+    --text-color: var(--color-beta);
+
+    /** Button
+   ---------------------------------------------------------*/
+
+    --button-background: var(--background-plus);
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-background: var(--background);
+    --header-icon-color: var(--text-color);
+    --header-button-color: var(--highlight-color);
+
+    /** Borders
+   ---------------------------------------------------------*/
+
+    --border-color: var(--color-gamma);
+
+    /** Inputs
+   ---------------------------------------------------------*/
+
+    --input-background: var(--background-plus);
+
+    /** Text Input
+   ---------------------------------------------------------*/
+
+    --text-input-background: var(--background-minus);
+
+    /** Switch
+   ---------------------------------------------------------*/
+
+    --switch-head-border-color: var(--background-minus-minus);
+    --switch-background: var(--background-minus-minus);
+
+    /** Checkbox
+   ---------------------------------------------------------*/
+
+    --checkbox-border-color: var(--background-minus-minus);
+
+    /** Buttons
+   ---------------------------------------------------------*/
+
+    --button-box-shadow: none;
+    --button-box-shadow-active: none;
+}
+
+.tcl-theme-email {
+    /** Background
+   ---------------------------------------------------------*/
+
+    --background: #e55525;
+    --background-title: var(--color-white);
+    --background-plus: var(--color-beta);
+    --background-minus: var(--color-epsilon);
+    --background-minus-minus: var(--color-zeta);
+
+    /** Highlight
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-lime);
+
+    /** Borders
+   ---------------------------------------------------------*/
+
+    --border-color: var(--color-theta);
+
+    /** Titles
+   ---------------------------------------------------------*/
+
+    --title-color: var(--background-title);
+
+    /** Buttons
+   ---------------------------------------------------------*/
+
+    --button-background: var(--background-plus);
+
+    /** Switch
+   ---------------------------------------------------------*/
+
+    --switch-background: var(--background-minus-minus);
+
+    /** Checkbox
+   ---------------------------------------------------------*/
+
+    --checkbox-border-color: var(--background-minus-minus);
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-color: var(--title-color);
+    --header-background: var(--background);
+    --header-button-color: var(--highlight-color);
+    --header-disabled-button-color: var(--color-theta);
+    --header-action-button-color: var(--title-color);
+    --highlight-text-color: var(--color-white, #ffffff);
+
+    /*Height*/
+    --header-height: 35px;
+    --footer-height: 4rem; /*height of softkey bar*/
+    --client-height: calc(100% - var(--header-height) - var(--footer-height));
+}
+
+.tcl-theme-clock {
+    /** Background
+   ---------------------------------------------------------*/
+
+    --background: var(--color-pink);
+    --background-title: var(--color-white);
+    --background-plus: var(--color-beta);
+    --background-minus: var(--color-epsilon);
+    --background-minus-minus: var(--color-zeta);
+
+    /** Highlight
+   ---------------------------------------------------------*/
+
+    --highlight-color: var(--color-lime);
+
+    /** Borders
+   ---------------------------------------------------------*/
+
+    --border-color: var(--color-theta);
+
+    /** Titles
+   ---------------------------------------------------------*/
+
+    --title-color: var(--background-title);
+
+    /** Buttons
+   ---------------------------------------------------------*/
+
+    --button-background: var(--background-plus);
+
+    /** Switch
+   ---------------------------------------------------------*/
+
+    --switch-background: var(--background-minus-minus);
+
+    /** Checkbox
+   ---------------------------------------------------------*/
+
+    --checkbox-border-color: var(--background-minus-minus);
+
+    /** Header
+   ---------------------------------------------------------*/
+
+    --header-color: var(--title-color);
+    --header-background: var(--color-wathetblue); /*changed*/
+    --header-button-color: var(--highlight-color);
+    --header-disabled-button-color: var(--color-theta);
+    --header-action-button-color: var(--title-color);
+}
+
+/* 裁剪效果 */
+.theme-system,
+#screen {
+    position: relative;
+}
+.theme-system::after,
+.theme-system::before,
+.theme-system > #screen::after,
+.theme-system > #screen::before {
+    position: absolute;
+    content: "";
+    width: calc(var(--clip-round-size) * 2);
+    height: calc(var(--clip-round-size) * 2);
+    z-index: var(--clip-round-z-index);
+    background: var(--clip-round-background);
+}
+.theme-system::after {
+    right: calc(var(--clip-round-size) * -1);
+    top: calc(var(--clip-round-size) * -1);
+    transform: rotate(270deg);
+}
+.theme-system::before {
+    left: calc(var(--clip-round-size) * -1);
+    top: calc(var(--clip-round-size) * -1);
+    transform: rotate(180deg);
+}
+.theme-system > #screen::after {
+    right: calc(var(--clip-round-size) * -1);
+    bottom: calc(var(--clip-round-size) * -1);
+    transform: rotate(0deg);
+}
+.theme-system > #screen::before {
+    left: calc(var(--clip-round-size) * -1);
+    bottom: calc(var(--clip-round-size) * -1);
+    transform: rotate(90deg);
+}
+
+/* 系统设置 */
+/* .theme-system .root .content ul li{
+    min-height: 0rem !important;
+    padding: 0.5rem 1rem !important;
+}
+.theme-system .root .content ul li span{
+    font-size: 1.4rem !important;
+} */
+
+/* 通知栏 */
+
+#notification-toaster {
+    /* background-color: var(--color-gs20);
+    border-bottom: 0.1rem solid var(--color-gs45);
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
+    color: var(--color-gs90); */
+    /* border-bottom: none !important; */
+    /* background-color: rgba(0, 0, 0, 0.8) !important;
+    border: 0.1rem solid rgba(255, 255, 255, 0.1);
+    box-shadow: none !important;
+    color: white !important;
+    margin: 0.5rem !important;
+    border-radius: 0.5rem !important; */
+    background-color: rgba(255, 255, 255, 1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    /* box-shadow: 0 0 8px rgba(0,0,0, 0.1) !important; */
+    box-shadow: none !important;
+    color: black !important;
+    margin: calc(0.5rem + var(--statusbar-height)) 0.7rem 0.7rem 0.7rem !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+}
+#notification-toaster .container {
+    display: flex;
+    max-height: 100vh;
+    overflow: auto;
+    justify-content: center !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    overflow: hidden !important;
+}
+#notification-toaster .container .icon {
+    position: relative;
+    width: 4.2rem;
+    max-height: 5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-shrink: 0;
+    /* align-items: flex-start; */
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0.7rem !important;
+}
+#notification-toaster .container .icon .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: transparent !important;
+}
+#notification-toaster .container .icon > img {
+    width: 3.2rem;
+    height: 3.2rem;
+    z-index: 1;
+}
+#notification-toaster .container .content {
+    max-height: inherit;
+    align-self: center;
+    flex: 1 !important;
+    flex-basis: 0 !important;
+    padding: 0.7rem 1rem 0.7rem 0.5rem !important;
+    word-break: break-all !important;
+    min-width: 0;
+}
+#notification-toaster .container .content .primary {
+    font-size: 1.2rem !important;
+}
+#notification-toaster .container .content .secondary {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all !important;
+    color: rgba(0, 0, 0, 0.5) !important;
+    line-height: unset;
+    font-size: 1rem !important;
+}
+#notification-toaster .container .content .secondary:not(:empty) {
+    margin-top: 0.1rem !important;
+}
+
+/* Toast */
+
+#system-toaster {
+    /* background-color: var(--color-gs20);
+    border-bottom: 0.1rem solid var(--color-gs45);
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
+    color: var(--color-gs90); */
+    background-color: rgba(255, 255, 255, 1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    box-shadow: none !important;
+    /* box-shadow: 0 0 1px rgba(16, 16, 16, 0.1) !important; */
+    color: black !important;
+    margin: calc(0.5rem + var(--statusbar-height)) 0.7rem 0.7rem 0.7rem !important;
+    border-radius: 0.5rem !important;
+}
+#system-toaster .container {
+    display: flex;
+    max-height: 100vh;
+    overflow: auto;
+}
+#system-toaster .container .icon {
+    position: relative;
+    width: 4.2rem;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-shrink: 0;
+    /* align-items: flex-start; */
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#system-toaster .container .icon .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: transparent !important;
+}
+#system-toaster .container .icon > img {
+    width: 3.2rem;
+    height: 3.2rem;
+    z-index: 1;
+}
+#system-toaster .container .content {
+    max-height: inherit;
+    align-self: center;
+    flex-grow: 1;
+    padding: 0.7rem !important;
+    /* word-wrap: break-word; */
+    word-break: break-all !important;
+    min-width: 0;
+}
+#system-toaster .container .content .secondary {
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all !important;
+    text-overflow: ellipsis;
+    color: rgba(0, 0, 0, 0.5) !important;
+    line-height: unset;
+}
+#system-toaster .container .content .secondary:not(:empty) {
+    margin-top: 0.5rem;
+}
+
+#system-toaster-root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+#system-toaster-root .container .content {
+    text-align: center;
+    font-variant-numeric: nominal;
+}
+
+/* 对话框 */
+
+.dialog-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: rgba(0, 0, 0, 0.85); */
+    background: rgba(0, 0, 0, 0.3) !important;
+}
+.dialog-container .dialog {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-height: calc(100% - 2rem - var(--statusbar-height));
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--sao-border-color) !important;
+    overflow: hidden;
+    background: var(--sao-background-color) !important;
+}
+.dialog-container .dialog > .header {
+    text-align: center !important;
+    padding: 0.4rem 1rem;
+    background-color: var(--sao-header-bacground-color) !important;
+    color: var(--sao-content-color) !important;
+    font-size: 1.5rem !important;
+    position: relative !important;
+    box-shadow: var(--sao-header-shadow) !important;
+    border: 0.1rem solid var(--sao-header-border-color) !important;
+    z-index: 1;
+}
+/* .dialog-container .dialog > .header::after{
+    content: "";
+    position: absolute;
+    height: 0.1rem;
+    width: calc(100% - 32px);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.05);
+} */
+.dialog-container .dialog > .content {
+    height: auto;
+    overflow-y: auto;
+    word-wrap: break-word;
+    word-break: break-all !important;
+    padding: 1.5rem 1rem 1.5rem 1rem !important;
+    background-color: var(--sao-content-background-color) !important;
+    color: var(--sao-content-color) !important;
+    text-align: center !important;
+    font-size: 1.4rem !important;
+}
+.dialog-container .dialog > .content input {
+    display: block;
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem !important;
+    box-sizing: border-box;
+    /* border: 0.2rem solid #f6529b !important; */
+    border: none !important;
+    border-bottom: 0.1rem solid var(--sao-content-color) !important;
+    border-radius: 0rem !important;
+    outline: none !important;
+    margin-top: 0.3rem !important;
+    background: none !important;
+}
+.dialog-container .dialog > .content p {
+    margin: 0.4rem 0 0 0;
+    color: rgba(0, 0, 0, 0.8);
+}
+.dialog-container .dialog > .content progress {
+    width: 100%;
+    height: 0.6rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--color-gs45);
+}
+.dialog-container .dialog > .content progress::-moz-progress-bar {
+    background-color: var(--highlight-color, #f6529b);
+    border-radius: 0.5rem;
+}
+
+/* 列表选择框 */
+#menu-root > .option-menu-container {
+    border-bottom: var(--softkeybar-height) solid transparent !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+}
+#menu-root > .option-menu-container > .option-menu {
+    /* border-radius: 1.5rem 1.5rem 0 0 !important; */
+    /* border-top: 1px solid rgba(0, 0, 0, 0.05) !important; */
+    overflow: hidden;
+    min-height: 0 !important;
+}
+#menu-root > .option-menu-container > .option-menu > .header {
+    text-align: center !important;
+    padding: 0.4rem 1rem;
+    background-color: var(--sao-header-bacground-color) !important;
+    color: var(--sao-content-color) !important;
+    font-size: 1.5rem !important;
+    position: relative !important;
+    box-shadow: var(--sao-header-shadow) !important;
+    border: 0.1rem solid var(--sao-header-border-color) !important;
+    z-index: 1;
+}
+#menu-root > .option-menu-container > .option-menu > .content {
+    background-color: var(--sao-content-background-color) !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+#menu-root > .option-menu-container > .option-menu > .content > .menu-item {
+    border: none !important;
+    outline: none !important;
+    color: var(--sao-content-color) !important;
+    border-radius: 2rem !important;
+    font-size: 1.4rem !important;
+    margin: 0.2rem 1.5rem !important;
+    min-height: 0 !important;
+    justify-content: center !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    flex-direction: row !important;
+}
+
+/* 导航栏 */
+/* .theme-system > #screen > #soft-key-root > #softkeyPanel {
+    background: white;
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.theme-system > #screen > #soft-key-root > #softkeyPanel > * + * {
+    margin-left: 15px;
+}
+
+.theme-system > #screen > #soft-key-root > #softkeyPanel #software-keys-left,
+.theme-system > #screen > #soft-key-root > #softkeyPanel #software-keys-center,
+.theme-system > #screen > #soft-key-root > #softkeyPanel #software-keys-right {
+    font-weight: normal;
+    text-align: center;
+    border-radius: 17px;
+    height: 100%;
+    font-size: 13px;
+    padding: 1px;
+    line-height: unset;
+    flex: 1;
+}
+
+.theme-system > #screen > #soft-key-root > #softkeyPanel #software-keys-left {
+    color: black;
+    background: rgb(238, 238, 238);
+}
+
+.theme-system > #screen > #soft-key-root > #softkeyPanel #software-keys-left:empty {
+    visibility: hidden;
+}
+
+.theme-system > #screen > #soft-key-root > #softkeyPanel #software-keys-center {
+    color: white;
+    background: var(--color-purple);
+}
+
+.theme-system > #screen > #soft-key-root > #softkeyPanel #software-keys-center:empty {
+    visibility: hidden;
+}
+
+.theme-system > #screen > #soft-key-root > #softkeyPanel #software-keys-right {
+    color: white;
+    background: var(--color-purple);
+}
+
+.theme-system > #screen > #soft-key-root > #softkeyPanel #software-keys-right:empty {
+    visibility: hidden;
+}
+
+.theme-system > #screen > #soft-key-root > #softkeyPanel #software-keys-center:not(:empty) + #software-keys-right:not(:empty) {
+    color: black;
+    background: rgb(238, 238, 238);
+} */
+
+/* .theme-system>#screen>#dialog-root{
+    background: linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,1) 90%,rgba(255,255,255,1) 100%) !important;
+} */
