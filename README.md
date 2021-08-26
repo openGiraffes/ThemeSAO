@@ -3,4 +3,4 @@ A theme for KaiOS.(need Intent)
 
 **What does "SAO" mean?**
 
-> Sword Art Online (that is all)
+> Sword Art Online (that is all. by.Lcsunm)
